@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@tsconfig/node24/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "module": "nodenext",
+    "paths": { "#build/*": ["./generated/*"] },
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
+}

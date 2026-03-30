@@ -1,0 +1,96 @@
+{
+  "name": "@veehance/react",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "@omaucf <omaucf@pm.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "imports": {
+    "#build/app.config": "./generated/app.config.ts",
+    "#build/theme/*": "./generated/ui/*.ts",
+    "#build/ui/*": "./generated/ui/*.ts",
+    "#build/ui.css*": "./generated/ui.css"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "style": "./dist/index.css",
+      "import": "./dist/index.js"
+    },
+    "./next": "./dist/next.js",
+    "./template": "./dist/template.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo dist coverage generated node_modules",
+    "postinstall": "[ ! -d .nuxt ] && nuxt prepare || true"
+  },
+  "peerDependencies": {
+    "@nuxt/kit": ">=4",
+    "@nuxt/schema": ">=4",
+    "@unhead/vue": ">=2",
+    "defu": ">=6",
+    "next": ">=16",
+    "react": ">=19",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@nuxt/kit": {
+      "optional": true
+    },
+    "@unhead/vue": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2",
+    "@veehance/ui": "workspace:*",
+    "unplugin": "^3.0.0",
+    "vite-plugin-webfont-dl": "^3.12.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.101"
+  }
+}

@@ -1,0 +1,35 @@
+@import "@veehance/u";
+@import "#build/ui.css";
+
+@layer base {
+  :root,
+  :host {
+    color-scheme: var(--ui-color-scheme);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    text-rendering: optimizelegibility;
+    touch-action: manipulation;
+  }
+
+  body {
+    color: var(--ui-text);
+    background: var(--ui-bg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--ui-scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--ui-scrollbar-thumb);
+    border-radius: calc(var(--ui-radius) * 4);
+  }
+}

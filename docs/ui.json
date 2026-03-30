@@ -1,0 +1,68 @@
+{
+  "framework": [
+    "vue:nuxt",
+    {
+      "colorMode": true,
+      "content": true,
+      "fonts": true,
+      "icon": true,
+      "image": true,
+      "locale": true,
+      "prose": true
+    }
+  ],
+  "dts": {
+    "autoImport": false,
+    "components": false,
+    "output": ".nuxt",
+    "prefix": "u"
+  },
+  "registry": {
+    "items": [
+      {
+        "type": "ui:icons",
+        "name": "custom",
+        "files": [
+          {
+            "type": "ui:svg",
+            "name": "logo",
+            "raw": "<rect width=\"3\" height=\"1\" x=\"9\" y=\"7.5\" fill=\"#b0bec5\" rx=\"0\" ry=\".032\"/><rect width=\"3\" height=\"1\" x=\"4\" y=\"7.5\" fill=\"#b0bec5\" rx=\"0\" ry=\".032\"/><circle cx=\"3\" cy=\"8\" r=\"2\" fill=\"#4caf50\"/><circle cx=\"13\" cy=\"8\" r=\"2\" fill=\"#ff9800\"/><rect width=\"4\" height=\"4\" x=\"6\" y=\"6\" fill=\"#00bcd4\" rx=\".59\"/>"
+          }
+        ]
+      }
+    ]
+  },
+  "tailwind": {
+    "strategy": ["merge", { "prefix": "" }],
+    "css": "./app/styles.css",
+    "cssVariables": false,
+    "inlines": [],
+    "plugins": [],
+    "sources": []
+  },
+  "theme": {
+    "colors": ["primary", "secondary", "success", "info", "warning", "error"],
+    "defaultVariants": { "color": "primary", "size": "md" },
+    "iconset": ["lucide", { "github": "simple-icons:github" }],
+    "preset": ["luna", { "main": { "base": "min-h-screen" } }],
+    "transitions": true
+  },
+  "ui": {
+    "colors": {
+      "primary": "emerald",
+      "secondary": "cyan",
+      "success": "green",
+      "info": "blue",
+      "warning": "yellow",
+      "error": "red",
+      "neutral": "zinc"
+    },
+    "icons": {
+      "next": "logos:nextjs-icon",
+      "nuxt": "logos:nuxt-icon",
+      "react": "logos:react",
+      "vite": "logos:vitejs",
+      "vue": "logos:vue"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "framework": "vue:nuxt",
+  "registry": {
+    "items": [
+      "./src/lib/components/container/container.recipe.ts",
+      "./src/lib/components/main/main.recipe.ts"
+    ]
+  }
+}

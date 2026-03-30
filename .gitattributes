@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+*.{css} diff=css
+*.{js,mjs,ts,tsx} diff=js
+*.{json,jsonc} diff=json
+*.{md,mdc,mdx} diff=markdown
+*.{vue} diff=vue

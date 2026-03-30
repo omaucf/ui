@@ -1,0 +1,150 @@
+import type { Options } from "../lib/types/ui.js";
+import { cc } from "../lib/utils/tailwind.js";
+
+export default (options: Options) =>
+  cc({
+    slots: {
+      root: "flex min-h-0 min-w-0 flex-col divide-y divide-default",
+      input: "",
+      close: "",
+      back: "p-0",
+      content: "relative flex flex-col overflow-hidden",
+      footer: "p-1",
+      viewport:
+        "relative flex-1 scroll-py-1 overflow-y-auto focus:outline-none",
+      group: "isolate p-1",
+      empty: "text-center text-muted",
+      label: "font-semibold text-highlighted",
+      item: "group relative flex w-full select-none items-start outline-none before:absolute before:inset-px before:z-[-1] before:rounded-md data-disabled:cursor-not-allowed data-disabled:opacity-75",
+      itemLeadingIcon: "shrink-0",
+      itemLeadingAvatar: "shrink-0",
+      itemLeadingAvatarSize: "",
+      itemLeadingChip: "shrink-0",
+      itemLeadingChipSize: "",
+      itemTrailing: "ms-auto inline-flex items-center",
+      itemTrailingIcon: "shrink-0",
+      itemTrailingHighlightedIcon:
+        "hidden shrink-0 text-dimmed group-data-highlighted:inline-flex",
+      itemTrailingKbds: "hidden shrink-0 items-center lg:inline-flex",
+      itemTrailingKbdsSize: "",
+      itemWrapper: "flex min-w-0 flex-1 flex-col text-start",
+      itemLabel: "space-x-1 truncate text-dimmed",
+      itemDescription: "truncate text-muted",
+      itemLabelBase:
+        "text-highlighted [&>mark]:bg-primary [&>mark]:text-inverted",
+      itemLabelPrefix: "text-default",
+      itemLabelSuffix: "text-dimmed [&>mark]:bg-primary [&>mark]:text-inverted",
+    },
+    variants: {
+      virtualize: {
+        true: {
+          viewport: "isolate p-1",
+        },
+        false: {
+          viewport: "divide-y divide-default",
+        },
+      },
+      size: {
+        xs: {
+          input: "[&>input]:h-10",
+          empty: "py-3 text-xs",
+          label: "gap-1 p-1 text-[10px]/3",
+          item: "gap-1 p-1 text-xs",
+          itemLeadingIcon: "size-4",
+          itemLeadingAvatarSize: "3xs",
+          itemLeadingChip: "size-4",
+          itemLeadingChipSize: "sm",
+          itemTrailing: "gap-1",
+          itemTrailingIcon: "size-4",
+          itemTrailingHighlightedIcon: "size-4",
+          itemTrailingKbds: "gap-0.5",
+          itemTrailingKbdsSize: "sm",
+        },
+        sm: {
+          input: "[&>input]:h-11",
+          empty: "py-4 text-xs",
+          label: "gap-1.5 p-1.5 text-[10px]/3",
+          item: "gap-1.5 p-1.5 text-xs",
+          itemLeadingIcon: "size-4",
+          itemLeadingAvatarSize: "3xs",
+          itemLeadingChip: "size-4",
+          itemLeadingChipSize: "sm",
+          itemTrailing: "gap-1.5",
+          itemTrailingIcon: "size-4",
+          itemTrailingHighlightedIcon: "size-4",
+          itemTrailingKbds: "gap-0.5",
+          itemTrailingKbdsSize: "sm",
+        },
+        md: {
+          input: "[&>input]:h-12",
+          empty: "py-6 text-sm",
+          label: "gap-1.5 p-1.5 text-xs",
+          item: "gap-1.5 p-1.5 text-sm",
+          itemLeadingIcon: "size-5",
+          itemLeadingAvatarSize: "2xs",
+          itemLeadingChip: "size-5",
+          itemLeadingChipSize: "md",
+          itemTrailing: "gap-1.5",
+          itemTrailingIcon: "size-5",
+          itemTrailingHighlightedIcon: "size-5",
+          itemTrailingKbds: "gap-0.5",
+          itemTrailingKbdsSize: "md",
+        },
+        lg: {
+          input: "[&>input]:h-13",
+          empty: "py-7 text-sm",
+          label: "gap-2 p-2 text-xs",
+          item: "gap-2 p-2 text-sm",
+          itemLeadingIcon: "size-5",
+          itemLeadingAvatarSize: "2xs",
+          itemLeadingChip: "size-5",
+          itemLeadingChipSize: "md",
+          itemTrailing: "gap-2",
+          itemTrailingIcon: "size-5",
+          itemTrailingHighlightedIcon: "size-5",
+          itemTrailingKbds: "gap-0.5",
+          itemTrailingKbdsSize: "md",
+        },
+        xl: {
+          input: "[&>input]:h-14",
+          empty: "py-8 text-base",
+          label: "gap-2 p-2 text-sm",
+          item: "gap-2 p-2 text-base",
+          itemLeadingIcon: "size-6",
+          itemLeadingAvatarSize: "xs",
+          itemLeadingChip: "size-6",
+          itemLeadingChipSize: "lg",
+          itemTrailing: "gap-2",
+          itemTrailingIcon: "size-6",
+          itemTrailingHighlightedIcon: "size-6",
+          itemTrailingKbds: "gap-0.5",
+          itemTrailingKbdsSize: "lg",
+        },
+      },
+      active: {
+        true: {
+          item: "text-highlighted before:bg-elevated",
+          itemLeadingIcon: "text-default",
+        },
+        false: {
+          item: [
+            "text-default data-highlighted:not-data-disabled:text-highlighted data-highlighted:not-data-disabled:before:bg-elevated/50",
+            options.theme?.transitions &&
+              "transition-colors before:transition-colors",
+          ],
+          itemLeadingIcon: [
+            "text-dimmed group-data-highlighted:not-group-data-disabled:text-default",
+            options.theme?.transitions && "transition-colors",
+          ],
+        },
+      },
+      loading: {
+        true: {
+          itemLeadingIcon: "animate-spin",
+        },
+      },
+    },
+    defaultVariants: {
+      size: "md",
+    },
+  });

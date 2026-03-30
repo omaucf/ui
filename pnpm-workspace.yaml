@@ -1,0 +1,11 @@
+packages:
+  - docs
+  - examples/*
+  - packages/*
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+
+onlyBuiltDependencies:
+  - sharp

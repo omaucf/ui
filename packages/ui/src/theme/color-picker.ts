@@ -1,0 +1,42 @@
+import { cc } from "../lib/utils/tailwind.js";
+
+export default cc({
+  slots: {
+    root: "data-disabled:opacity-75",
+    picker: "flex gap-4",
+    selector: "touch-none rounded-md",
+    selectorBackground: "relative h-full w-full rounded-md",
+    selectorThumb:
+      "absolute size-4 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full ring-2 ring-white data-disabled:cursor-not-allowed",
+    track: "relative w-[8px] touch-none rounded-md",
+    trackThumb:
+      "absolute size-4 -translate-x-[4px] -translate-y-1/2 transform cursor-pointer rounded-full ring-2 ring-white data-disabled:cursor-not-allowed rtl:translate-x-[4px]",
+  },
+  variants: {
+    size: {
+      xs: {
+        selector: "h-38 w-38",
+        track: "h-38",
+      },
+      sm: {
+        selector: "h-40 w-40",
+        track: "h-40",
+      },
+      md: {
+        selector: "h-42 w-42",
+        track: "h-42",
+      },
+      lg: {
+        selector: "h-44 w-44",
+        track: "h-44",
+      },
+      xl: {
+        selector: "h-46 w-46",
+        track: "h-46",
+      },
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});

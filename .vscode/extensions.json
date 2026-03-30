@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "antfu.iconify",
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "editorconfig.editorconfig",
+    "nuxt.mdc",
+    "unifiedjs.vscode-mdx",
+    "vue.volar"
+  ]
+}

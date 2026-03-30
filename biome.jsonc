@@ -1,0 +1,119 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "ultracite/core",
+    "ultracite/next",
+    "ultracite/react",
+    "ultracite/vue"
+  ],
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ":BLANK_LINE:",
+              ["@veehance/**"],
+              ":BLANK_LINE:",
+              ":PACKAGE:",
+              ":PACKAGE_WITH_PROTOCOL:",
+              ":BLANK_LINE:",
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              ":PATH:"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "files": {
+    "includes": [
+      "!!__tmp__",
+      "!!**/.next",
+      "!!**/.nitro",
+      "!!**/.nuxt",
+      "!!**/.react-router",
+      "!!**/.tanstack",
+      "!!**/cpverage",
+      "!!**/dist",
+      "!!**/node_modules",
+      "!!**/generated",
+      "!!**/routeTree.gen.ts"
+    ]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "lineWidth": 80
+  },
+  "linter": {
+    "rules": {
+      "nursery": {
+        "useSortedClasses": {
+          "level": "on",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["cc", "cn", "cv", "cx"]
+          }
+        }
+      },
+      "performance": {
+        "noBarrelFile": "off"
+      },
+      "style": {
+        "useBlockStatements": "off",
+        "useFilenamingConvention": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "examples/react/*.{ts,tsx}",
+        "examples/react-next/*.{ts,tsx}",
+        "examples/react-router/*.{ts,tsx}",
+        "packages/react/**/*.{ts,tsx}"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "docs/app/**/*.{ts,vue}",
+        "examples/vue/*.{ts,vue}",
+        "examples/vue-nuxt/*.{ts,vue}",
+        "examples/vue-router/*.{ts,vue}",
+        "packages/vue/**/*.{ts,vue}"
+      ],
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      },
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
+    }
+  ]
+}
