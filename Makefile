@@ -2,6 +2,18 @@ bump-deps:
 	@pnpx npm-check-updates --deep -u
 
 # ----------------------------------------
+# Changeset commands
+# ----------------------------------------
+changeset.add:
+	@pnpm changeset add
+
+changeset.version:
+	@pnpm changeset version
+
+changeset.publish:
+	@pnpm changeset publish
+
+# ----------------------------------------
 # Turbo commands
 # ----------------------------------------
 turbo.boundaries:
