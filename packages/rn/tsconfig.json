@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@tsconfig/node24/tsconfig.json",
+    "@tsconfig/vite-react/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "jsx": "react-native",
+    "jsxImportSource": "react",
+    "module": "esnext",
+    "paths": {
+      "@/*": ["./src/lib/*"]
+    },
+    "resolveJsonModule": true,
+    "types": ["node", "vite/client", "vitest/globals"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "uniwind-types.d.ts"],
+  "exclude": []
+}

@@ -1,6 +1,6 @@
 # Veehance UI
 
-**A visual enhanced design system.**
+**A visually enhanced design system.**
 
 ![License][branch-license]
 
@@ -8,7 +8,7 @@
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22+
 - [pnpm](https://pnpm.io) (or bun/npm/yarn)
 
 ## License

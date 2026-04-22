@@ -1,0 +1,71 @@
+{
+  "name": "@iueev/core",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/core"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json",
+    "./plugins/*": "./dist/plugins/*.js",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./theme": "./dist/theme/index.js",
+    "./theme/prose": "./dist/theme/prose/index.js",
+    "./theme/prose/*": "./dist/theme/prose/*.js",
+    "./theme/ui": "./dist/theme/ui/index.js",
+    "./theme/ui/*": "./dist/theme/ui/*.js",
+    "./ui.css": "./dist/index.css",
+    "./unplugin": "./dist/unplugin.js",
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@iueev/theme": "workspace:*",
+    "radashi": "^12.9.2",
+    "tailwind-variants": "^3.3.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "unplugin": ">=3",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@tailwindcss/vite": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

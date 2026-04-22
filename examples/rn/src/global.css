@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "uniwind";
+
+@source "../node_modules/@iueev/rn/dist/**.*{js,jsx,ts,tsx}";

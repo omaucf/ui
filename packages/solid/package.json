@@ -1,0 +1,78 @@
+{
+  "name": "@iueev/solid",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/solid"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./container": {
+      "solid": "./dist/lib/container/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/ui/container/index.d.ts",
+        "default": "./dist/lib/components/ui/container/index.js"
+      }
+    },
+    "./main": {
+      "solid": "./dist/lib/main/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/ui/main/index.d.ts",
+        "default": "./dist/lib/components/ui/main/index.js"
+      }
+    },
+    "./package.json": "./package.json",
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@iueev/core": "workspace:*",
+    "unplugin": "^3.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "unplugin-solid": "^2.0.0"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "solid-js": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

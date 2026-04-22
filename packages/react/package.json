@@ -1,0 +1,63 @@
+{
+  "name": "@iueev/react",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "integrations/react"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./container": "./dist/lib/components/ui/container/index.js",
+    "./main": "./dist/lib/components/ui/main/index.js",
+    "./package.json": "./package.json",
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@iueev/core": "workspace:*",
+    "unplugin": "^3.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

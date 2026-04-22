@@ -1,5 +1,20 @@
 # Outputs
+.expo
+.next
+.nitro
+.nuxt
+.output
+.react-router
+.router
+.svelte-kit
+.tanstack
+.veehance
 dist
+web-build
+auto-imports.d.ts
+components.d.ts
+expo-env.d.ts
+next-env.d.ts
 
 # Environment
 .env
@@ -10,6 +25,21 @@ dist
 node_modules
 .pnp
 .pnp.js
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Storybook
+storybook-static
+*storybook.log
 
 # Testing
 coverage
@@ -27,6 +57,48 @@ yarn-error.log*
 __tmp__
 *.old
 
+# Xcode
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+!default.perspectivev3
+*.hmap
+*.ipa
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+*.xccheckout
+*.xcuserstate
+**/.xcode.env.local
+DerivedData
+xcuserdata
+
+# Android/IntelliJ
+!debug.keystore
+.cxx/
+.gradle
+.kotlin
+*.hprof
+*.iml
+*.keystore
+local.properties
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+.bundle
+*.jsbundle
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
 # IDEs
 .idea
 .vs
@@ -40,3 +112,6 @@ __tmp__
 
 # Development
 .turbo
+
+# Workspace
+.todo

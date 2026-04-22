@@ -1,0 +1,11 @@
+@custom-variant light {
+  :where(.light, .light *) & {
+    @slot;
+  }
+}
+
+@custom-variant dark {
+  :where(.dark, .dark *) & {
+    @slot;
+  }
+}

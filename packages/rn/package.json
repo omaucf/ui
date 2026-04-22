@@ -1,0 +1,104 @@
+{
+  "name": "@iueev/rn",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/rn"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/typescript/index.d.ts",
+      "import": "./dist/module/index.js",
+      "default": "./dist/module/index.js"
+    },
+    "./container": {
+      "types": "./dist/typescript/components/ui/container/index.d.ts",
+      "import": "./dist/module/components/ui/container/index.js"
+    },
+    "./main": {
+      "types": "./dist/typescript/components/ui/main/index.d.ts",
+      "import": "./dist/module/components/ui/main/index.js"
+    },
+    "./package.json": "./package.json",
+    "./prose/h1": {
+      "types": "./dist/typescript/components/prose/h1/index.d.ts",
+      "import": "./dist/module/components/prose/h1/index.js"
+    },
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "bob build && tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "bob build && tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@iueev/core": "workspace:*",
+    "unplugin": "^3.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "react-native-builder-bob": "^0.43.1",
+    "uniwind": "^1.12.0",
+    "vite-plugin-rnw": "0.0.12"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-native": ">=0.80",
+    "uniwind": ">=1",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "react-native-builder-bob": {
+    "source": "src/lib",
+    "output": "dist",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}
