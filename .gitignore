@@ -1,5 +1,18 @@
 # Outputs
+.data
+.next
+.nitro
+.nuxt
+.output
+.react-router
+.router
+.svelte-kit
+.tanstack
+.veehance
 dist
+auto-imports.d.ts
+components.d.ts
+next-env.d.ts
 
 # Environment
 .env
@@ -10,6 +23,10 @@ dist
 node_modules
 .pnp
 .pnp.js
+
+# Storybook
+storybook-static
+*storybook.log
 
 # Testing
 coverage
@@ -40,3 +57,6 @@ __tmp__
 
 # Development
 .turbo
+
+# Workspace
+.todo

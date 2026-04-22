@@ -1,0 +1,42 @@
+{
+  "name": "@veehance/{{ name }}",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "{{ path }}/{{ name }}"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

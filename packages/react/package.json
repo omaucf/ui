@@ -1,0 +1,167 @@
+{
+  "name": "@veehance/react",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/react"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "imports": {
+    "#build/app.config": "./node_modules/.veehance/app.config.ts",
+    "#build/theme/*": "./node_modules/.veehance/theme/*.ts",
+    "#build/ui/*": "./node_modules/.veehance/ui/*.ts",
+    "#build/ui.css": "./node_modules/.veehance/ui.css"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./app": "./dist/lib/providers/app/index.js",
+    "./color-mode": "./dist/lib/providers/color-mode/index.js",
+    "./color-mode/image": "./dist/lib/components/color-mode/image/index.js",
+    "./container": "./dist/lib/components/ui/container/index.js",
+    "./environment": "./dist/lib/providers/environment/index.js",
+    "./factory": "./dist/lib/elements/factory/index.js",
+    "./icon": "./dist/lib/elements/icon/index.js",
+    "./image": "./dist/lib/elements/image/index.js",
+    "./image/next": "./dist/base/next/image/index.js",
+    "./interaction": "./dist/lib/providers/interaction/index.js",
+    "./keyboard": "./dist/lib/providers/keyboard/index.js",
+    "./link": "./dist/lib/elements/link/index.js",
+    "./link/inertia": "./dist/base/inertia/link/index.js",
+    "./link/next": "./dist/base/next/link/index.js",
+    "./link/router": "./dist/base/router/link/index.js",
+    "./link/start": "./dist/base/start/link/index.js",
+    "./locale": "./dist/lib/providers/locale/index.js",
+    "./main": "./dist/lib/components/ui/main/index.js",
+    "./next": "./dist/next.js",
+    "./package.json": "./package.json",
+    "./placeholder": "./dist/lib/elements/placeholder/index.js",
+    "./prose/h1": "./dist/lib/components/prose/h1/index.js",
+    "./prose/h2": "./dist/lib/components/prose/h2/index.js",
+    "./prose/h3": "./dist/lib/components/prose/h3/index.js",
+    "./prose/h4": "./dist/lib/components/prose/h4/index.js",
+    "./prose/icon": "./dist/lib/components/prose/icon/index.js",
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./ui.css": "./dist/index.css",
+    "./unplugin": "./dist/unplugin.js",
+    "./use-app-config": "./dist/lib/composables/use-app-config.js",
+    "./use-color-mode": "./dist/lib/composables/use-color-mode.js",
+    "./use-composed-refs": "./dist/lib/composables/use-composed-refs.js",
+    "./use-controllable-state": "./dist/lib/composables/use-controllable-state.js",
+    "./use-debounce": "./dist/lib/composables/use-debounce.js",
+    "./use-effect-once": "./dist/lib/composables/use-effect-once.js",
+    "./use-environment": "./dist/lib/composables/use-environment.js",
+    "./use-event": "./dist/lib/composables/use-event.js",
+    "./use-icon": "./dist/lib/composables/use-icon.js",
+    "./use-locale": "./dist/lib/composables/use-locale.js",
+    "./use-safe-layout-effect": "./dist/lib/composables/use-safe-layout-effect.js",
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook:build": "storybook build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@unpic/core": "^1.0.3",
+    "@veehance/core": "workspace:*",
+    "@zag-js/core": "^1.43.3",
+    "@zag-js/dom-query": "^1.43.3",
+    "@zag-js/focus-visible": "^1.43.3",
+    "@zag-js/hotkeys": "^1.43.3",
+    "@zag-js/i18n-utils": "^1.43.3",
+    "@zag-js/react": "^1.43.3",
+    "@zag-js/utils": "^1.43.3",
+    "tailwind-variants": "^3.3.1",
+    "ufo": "^1.6.4",
+    "unplugin": "^3.3.0",
+    "unplugin-react-components": "^0.1.4"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.129",
+    "@iconify/tailwind4": "^1.2.3",
+    "react": "^19.2.8",
+    "react-frame-component": "^5.3.2"
+  },
+  "peerDependencies": {
+    "@iconify/utils": ">=3",
+    "@inertiajs/core": ">=3",
+    "@inertiajs/react": ">=3",
+    "@tanstack/react-router": ">=1",
+    "@unpic/react": ">=1",
+    "defu": ">=6",
+    "next": ">=15 || >=16",
+    "radashi": ">=12",
+    "react": ">=19",
+    "react-dom": ">=18",
+    "react-router": ">=7",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@iconify/utils": {
+      "optional": true
+    },
+    "@inertiajs/core": {
+      "optional": true
+    },
+    "@inertiajs/react": {
+      "optional": true
+    },
+    "@tanstack/react-router": {
+      "optional": true
+    },
+    "@unpic/vue": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "radashi": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-router": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

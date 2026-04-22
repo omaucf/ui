@@ -1,0 +1,189 @@
+{
+  "name": "@veehance/vue",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/vue"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "imports": {
+    "#build/app.config": "./node_modules/.veehance/app.config.ts",
+    "#build/theme/*": "./node_modules/.veehance/theme/*.ts",
+    "#build/ui/*": "./node_modules/.veehance/ui/*.ts",
+    "#build/ui.css": "./node_modules/.veehance/ui.css"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./app": "./dist/lib/providers/app/index.js",
+    "./color-mode": "./dist/lib/providers/color-mode/index.js",
+    "./color-mode/image": "./dist/lib/components/color-mode/image/index.js",
+    "./container": "./dist/lib/components/ui/container/index.js",
+    "./environment": "./dist/lib/providers/environment/index.js",
+    "./factory": "./dist/lib/elements/factory/index.js",
+    "./icon": "./dist/lib/elements/icon/index.js",
+    "./image": "./dist/lib/elements/image/index.js",
+    "./image/nuxt": "./dist/base/elements/nuxt/image/index.js",
+    "./interaction": "./dist/lib/providers/interaction/index.js",
+    "./keyboard": "./dist/lib/providers/keyboard/index.js",
+    "./link": "./dist/lib/elements/link/index.js",
+    "./link/inertia": "./dist/base/elements/inertia/link/index.js",
+    "./link/nuxt": "./dist/base/elements/nuxt/link/index.js",
+    "./link/router": "./dist/base/elements/router/link/index.js",
+    "./link/start": "./dist/base/elements/start/link/index.js",
+    "./locale": "./dist/lib/providers/locale/index.js",
+    "./main": "./dist/lib/components/ui/main/index.js",
+    "./nuxt": "./dist/nuxt.js",
+    "./package.json": "./package.json",
+    "./placeholder": "./dist/lib/elements/placeholder/index.js",
+    "./plugin": "./plugin.d.ts",
+    "./prose/h1": "./dist/lib/components/prose/h1/index.js",
+    "./prose/h2": "./dist/lib/components/prose/h2/index.js",
+    "./prose/h3": "./dist/lib/components/prose/h3/index.js",
+    "./prose/h4": "./dist/lib/components/prose/h4/index.js",
+    "./prose/icon": "./dist/lib/components/prose/icon/index.js",
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./ui.css": "./dist/index.css",
+    "./unplugin": "./dist/unplugin.js",
+    "./use-app-config": "./dist/base/composables/use-app-config.js",
+    "./use-color-mode": "./dist/lib/composables/use-color-mode.js",
+    "./use-emit-as-props": "./dist/lib/composables/use-emit-as-props.js",
+    "./use-environment": "./dist/lib/composables/use-environment.js",
+    "./use-forward-expose": "./dist/lib/composables/use-forward-expose.js",
+    "./use-forward-props": "./dist/lib/composables/use-forward-props.js",
+    "./use-forward-props-emits": "./dist/lib/composables/use-forward-props-emits.js",
+    "./use-icon": "./dist/lib/composables/use-icon.js",
+    "./use-locale": "./dist/lib/composables/use-locale.js",
+    "./use-nuxt-app": "./dist/base/composables/use-nuxt-app.js",
+    "./use-route": "./dist/base/composables/use-route.js",
+    "./use-route/inertia": "./dist/base/composables/inertia/use-route.js",
+    "./use-scope-id": "./dist/lib/composables/use-scope-id.js",
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json",
+    "plugin.d.ts"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook-build": "storybook build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@unpic/core": "^1.0.3",
+    "@veehance/core": "workspace:*",
+    "@zag-js/avatar": "^1.43.3",
+    "@zag-js/core": "^1.43.3",
+    "@zag-js/dom-query": "^1.43.3",
+    "@zag-js/focus-visible": "^1.43.3",
+    "@zag-js/hotkeys": "^1.43.3",
+    "@zag-js/i18n-utils": "^1.43.3",
+    "@zag-js/utils": "^1.43.3",
+    "@zag-js/vue": "^1.43.3",
+    "hookable": "^6.1.1",
+    "knitwork": "^1.3.0",
+    "ohash": "^2.0.12",
+    "tailwind-variants": "^3.3.1",
+    "ufo": "^1.6.4",
+    "unplugin": "^3.3.0",
+    "unplugin-vue-components": "^32.1.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.129",
+    "@iconify/tailwind4": "^1.2.3",
+    "unplugin-vue": "^7.2.0",
+    "vue": "^3.5.42"
+  },
+  "peerDependencies": {
+    "@iconify/utils": ">=3",
+    "@inertiajs/core": ">=3",
+    "@inertiajs/vue3": ">=3",
+    "@nuxt/kit": ">=4",
+    "@nuxt/schema": ">=4",
+    "@tailwindcss/vite": ">=4",
+    "@tanstack/vue-router": ">=1",
+    "@unhead/vue": ">=3",
+    "@unpic/vue": ">=1",
+    "@vueuse/core": ">=14",
+    "defu": ">=6",
+    "mlly": ">=1",
+    "radashi": ">=12",
+    "unocss": ">=66",
+    "vite": ">=8",
+    "vue": ">=3",
+    "vue-router": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "@iconify/utils": {
+      "optional": true
+    },
+    "@inertiajs/core": {
+      "optional": true
+    },
+    "@inertiajs/vue3": {
+      "optional": true
+    },
+    "@nuxt/kit": {
+      "optional": true
+    },
+    "@tailwindcss/vite": {
+      "optional": true
+    },
+    "@tanstack/vue-router": {
+      "optional": true
+    },
+    "@unpic/vue": {
+      "optional": true
+    },
+    "@vueuse/core": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "mlly": {
+      "optional": true
+    },
+    "radashi": {
+      "optional": true
+    },
+    "unocss": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    },
+    "vue-router": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

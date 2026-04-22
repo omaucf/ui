@@ -1,0 +1,10 @@
+export { default as heroicons_outline } from "./heroicons-outline.js";
+export { default as heroicons_solid } from "./heroicons-solid.js";
+export { default as hugeicons } from "./hugeicons.js";
+export { default as iconoir } from "./iconoir.js";
+export { default as lucide } from "./lucide.js";
+export { default as material_symbols } from "./material-symbols.js";
+export { default as mdi } from "./mdi.js";
+export { default as mingcute } from "./mingcute.js";
+export { default as ph } from "./ph.js";
+export { default as tabler } from "./tabler.js";

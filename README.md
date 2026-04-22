@@ -1,6 +1,6 @@
 # Veehance UI
 
-**A visual enhanced design system.**
+**A visually enhanced design system.**
 
 ![License][branch-license]
 

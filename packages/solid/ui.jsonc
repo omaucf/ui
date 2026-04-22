@@ -1,0 +1,21 @@
+{
+  "framework": [
+    "solid:core",
+    {
+      "colorMode": true,
+      "fonts": {
+        "family": {
+          "mono": "Geist Mono:400,500,600,700",
+          "sans": "Geist:400,500,600,700"
+        }
+      },
+      "icons": true,
+      "image": true,
+      "locale": true,
+      "prose": true
+    }
+  ],
+  "dts": {
+    "workspace": true
+  }
+}

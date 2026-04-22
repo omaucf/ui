@@ -1,7 +1,10 @@
 {
   "recommendations": [
+    "antfu.iconify",
     "biomejs.biome",
     "bradlc.vscode-tailwindcss",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "svelte.svelte-vscode",
+    "vue.volar"
   ]
 }

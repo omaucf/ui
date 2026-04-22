@@ -1,0 +1,45 @@
+export const ACCENT_KEYS = [
+  "amber",
+  "blue",
+  "cyan",
+  "emerald",
+  "fuchsia",
+  "green",
+  "indigo",
+  "lime",
+  "orange",
+  "pink",
+  "purple",
+  "red",
+  "rose",
+  "sky",
+  "teal",
+  "violet",
+  "yellow",
+] as const;
+
+export const NEUTRAL_KEYS = [
+  "gray",
+  "mauve",
+  "mist",
+  "neutral",
+  "olive",
+  "slate",
+  "stone",
+  "taupe",
+  "zinc",
+] as const;
+
+export const SHADE_KEYS = [
+  "50",
+  "100",
+  "200",
+  "300",
+  "400",
+  "500",
+  "600",
+  "700",
+  "800",
+  "900",
+  "950",
+] as const;

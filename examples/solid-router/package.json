@@ -1,0 +1,25 @@
+{
+  "name": "@example/solid-router",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "clean": "git clean -xdf .turbo dist node_modules",
+    "dev": "dotenv-run -- vite dev",
+    "start": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.129",
+    "@solidjs/router": "^1.0.0",
+    "@unpic/solid": "^1.0.0",
+    "@veehance/core": "workspace:*",
+    "@veehance/solid": "workspace:*",
+    "solid-js": "^1.9.15"
+  },
+  "devDependencies": {
+    "unocss": "^66.10.0",
+    "vite": "^8.2.2"
+  }
+}

@@ -1,5 +1,5 @@
 bump-deps:
-	@pnpx npm-check-updates --deep -u
+	@pnpx npm-check-updates --deep -u -x typescript
 
 # ----------------------------------------
 # Changeset commands
@@ -23,7 +23,7 @@ turbo.pkg:
 	@pnpm turbo gen pkg --args $(filter-out $@,$(MAKECMDGOALS))
 
 turbo.dry:
-	@pnpm run-s clean && git clean -xdf .turbo node_modules
+	@pnpm turbo clean && git clean -xdf .turbo node_modules
 
 %:
 	@:

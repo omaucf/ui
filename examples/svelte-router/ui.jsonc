@@ -1,0 +1,5 @@
+{
+  "framework": "svelte:router",
+  "dts": { "autoImport": true, "components": true },
+  "style": { "engine": "unocss" }
+}

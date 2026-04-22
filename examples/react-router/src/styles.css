@@ -1,0 +1,15 @@
+@import "@veehance/react/ui.css";
+
+@layer base {
+  :host,
+  :root {
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, monospace;
+  }
+}
+
+@layer components {
+  [data-scope="container"] {
+    --at-apply: "opacity-100 starting:opacity-0 transition-opacity duration-750";
+  }
+}

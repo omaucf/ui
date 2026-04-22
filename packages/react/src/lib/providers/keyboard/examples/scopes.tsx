@@ -1,0 +1,86 @@
+import { useState } from "react";
+
+import {
+  createHotkeyStore,
+  useFormatHotkey,
+  useHotkeys,
+} from "@veehance/react/keyboard";
+
+const commands = [
+  { hotkey: "mod+B", id: "bold", label: "Bold", scope: "editor" },
+  { hotkey: "mod+P", id: "print", label: "Print", scope: "reader" },
+];
+
+const store = createHotkeyStore({ activeScopes: ["editor"] });
+
+export default () => {
+  const formatHotkey = useFormatHotkey();
+  const [scope, setScope] = useState("editor");
+  const [fired, setFired] = useState<string | null>(null);
+
+  useHotkeys({
+    commands: commands.map((command) => ({
+      action: () => setFired(command.id),
+      hotkey: command.hotkey,
+      id: command.id,
+      scopes: [command.scope],
+    })),
+    store,
+  });
+
+  const toggle = () => {
+    const next = scope === "editor" ? "reader" : "editor";
+    setScope(next);
+    setFired(null);
+    store.setScope(next);
+  };
+
+  return (
+    <div className="flex w-full max-w-[26rem] flex-col gap-4 rounded-[0.875rem] border border-default bg-elevated p-5 text-accented text-sm shadow-sm">
+      <p className="flex flex-wrap items-center gap-2 text-muted leading-[1.6]">
+        Only commands in the active scope respond
+      </p>
+
+      <div className="flex flex-wrap items-center gap-2.5">
+        <button
+          className="inline-flex items-center justify-center rounded-md border border-default bg-default px-3 py-1.5 font-medium text-accented text-sm transition-colors hover:bg-accented focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          onClick={toggle}
+          type="button"
+        >
+          Switch scope
+        </button>
+        <span
+          className="inline-flex items-center gap-1.5 rounded-full bg-accented px-2 py-[0.1875rem] font-semibold text-muted text-xs data-[state=active]:bg-accent-subtle data-[state=active]:text-accent"
+          data-state="active"
+        >
+          {scope}
+        </span>
+      </div>
+
+      <ul className="m-0 flex list-none flex-col gap-0.5 p-0">
+        {commands.map((command) => (
+          <li
+            className="flex items-center justify-between gap-3 rounded-lg px-2.5 py-2 transition-[background] duration-[120ms] ease-in-out data-[fired]:bg-accent-subtle"
+            data-fired={command.id === fired ? "" : undefined}
+            key={command.id}
+          >
+            <span
+              className={
+                command.scope === scope ? "opacity-100" : "opacity-[0.45]"
+              }
+            >
+              {command.label}{" "}
+              <span className="text-muted">· {command.scope}</span>
+            </span>
+            <kbd
+              className="inline-flex items-center gap-0.5 whitespace-nowrap rounded-md border border-default border-b-2 bg-accented px-[0.4375rem] py-[0.1875rem] font-semibold text-accented text-xs data-[active]:border-accent-muted data-[active]:bg-accent-subtle data-[active]:text-accent"
+              data-active={command.id === fired ? "" : undefined}
+            >
+              {formatHotkey(command.hotkey)}
+            </kbd>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};

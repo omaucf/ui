@@ -1,0 +1,27 @@
+@import "@veehance/core/ui.css";
+@import "#build/ui.css";
+
+@layer base {
+  * {
+    outline-color: color-mix(in oklab, var(--ui-border) 50%, transparent);
+    border-color: var(--ui-border);
+  }
+
+  :root,
+  :host {
+    color-scheme: var(--ui-color-scheme);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading, --font-sans);
+  }
+
+  a:focus-visible {
+    outline-offset: 0;
+  }
+}

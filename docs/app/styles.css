@@ -1,0 +1,39 @@
+@import "tailwindcss" theme(static);
+@import "@veehance/core/ui.css";
+@import "../.nuxt/ui.css";
+
+@theme static {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    outline-color: color-mix(in oklab, var(--ui-border) 50%, transparent);
+    border-color: var(--ui-border);
+  }
+
+  :root,
+  :host {
+    color-scheme: var(--ui-color-scheme);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+
+  a:focus-visible {
+    outline-offset: 0;
+  }
+}
+
+@layer components {
+  [data-scope="container"] {
+    @apply opacity-100 starting:opacity-0 transition-opacity duration-750;
+  }
+}

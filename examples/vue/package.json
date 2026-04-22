@@ -1,0 +1,33 @@
+{
+  "name": "@example/vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "clean": "git clean -xdf .tanstack .turbo dist node_modules",
+    "dev": "dotenv-run -- vite dev",
+    "start": "vite preview",
+    "typecheck": "vue-tsc -p ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.129",
+    "@iconify/tailwind4": "^1.2.3",
+    "@tanstack/router-plugin": "~1.168.35",
+    "@tanstack/vue-router": "^1.170.29",
+    "@tanstack/vue-router-devtools": "^1.167.1",
+    "@unhead/vue": "^3.4.0",
+    "@unpic/vue": "^1.0.0",
+    "@veehance/core": "workspace:*",
+    "@veehance/vue": "workspace:*",
+    "@vueuse/core": "^14.4.0",
+    "vue": "^3.5.42",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/devtools-vite": "^0.8.5",
+    "vite": "^8.2.2",
+    "web-vitals": "^6.2.1"
+  }
+}

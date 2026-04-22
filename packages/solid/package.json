@@ -1,0 +1,292 @@
+{
+  "name": "@veehance/solid",
+  "version": "0.0.0",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/solid"
+  },
+  "license": "MIT",
+  "author": "@omaucf <omaucf@pm.me>",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "imports": {
+    "#build/app.config": "./node_modules/.veehance/app.config.ts",
+    "#build/theme/*": "./node_modules/.veehance/theme/*.ts",
+    "#build/ui/*": "./node_modules/.veehance/ui/*.ts",
+    "#build/ui.css": "./node_modules/.veehance/ui.css"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./app": {
+      "solid": "./dist/lib/providers/app/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/app/index.d.ts",
+        "default": "./dist/lib/providers/app/index.js"
+      }
+    },
+    "./color-mode": {
+      "solid": "./dist/lib/providers/color-mode/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/color-mode/index.d.ts",
+        "default": "./dist/lib/providers/color-mode/index.js"
+      }
+    },
+    "./color-mode/image": {
+      "solid": "./dist/lib/components/color-mode/image/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/color-mode/image/index.d.ts",
+        "default": "./dist/lib/components/color-mode/image/index.js"
+      }
+    },
+    "./container": {
+      "solid": "./dist/lib/components/ui/container/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/ui/container/index.d.ts",
+        "default": "./dist/lib/components/ui/container/index.js"
+      }
+    },
+    "./environment": {
+      "solid": "./dist/lib/providers/environment/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/environment/index.d.ts",
+        "default": "./dist/lib/providers/environment/index.js"
+      }
+    },
+    "./factory": {
+      "solid": "./dist/lib/elements/factory/index.jsx",
+      "import": {
+        "types": "./dist/lib/elements/factory/index.d.ts",
+        "default": "./dist/lib/elements/factory/index.js"
+      }
+    },
+    "./icon": {
+      "solid": "./dist/lib/elements/icon/index.jsx",
+      "import": {
+        "types": "./dist/lib/elements/icon/index.d.ts",
+        "default": "./dist/lib/elements/icon/index.js"
+      }
+    },
+    "./image": {
+      "solid": "./dist/lib/elements/image/index.jsx",
+      "import": {
+        "types": "./dist/lib/elements/image/index.d.ts",
+        "default": "./dist/lib/elements/image/index.js"
+      }
+    },
+    "./interaction": {
+      "solid": "./dist/lib/providers/interaction/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/interaction/index.d.ts",
+        "default": "./dist/lib/providers/interaction/index.js"
+      }
+    },
+    "./keyboard": {
+      "solid": "./dist/lib/providers/keyboard/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/keyboard/index.d.ts",
+        "default": "./dist/lib/providers/keyboard/index.js"
+      }
+    },
+    "./link": {
+      "solid": "./dist/lib/elements/link/index.jsx",
+      "import": {
+        "types": "./dist/lib/elements/link/index.d.ts",
+        "default": "./dist/lib/elements/link/index.js"
+      }
+    },
+    "./link/inertia": {
+      "solid": "./dist/base/inertia/link/index.jsx",
+      "import": {
+        "types": "./dist/base/inertia/link/index.d.ts",
+        "default": "./dist/base/inertia/link/index.js"
+      }
+    },
+    "./link/start": {
+      "solid": "./dist/base/start/link/index.jsx",
+      "import": {
+        "types": "./dist/base/start/link/index.d.ts",
+        "default": "./dist/base/start/link/index.js"
+      }
+    },
+    "./locale": {
+      "solid": "./dist/lib/providers/locale/index.jsx",
+      "import": {
+        "types": "./dist/lib/providers/locale/index.d.ts",
+        "default": "./dist/lib/providers/locale/index.js"
+      }
+    },
+    "./main": {
+      "solid": "./dist/lib/components/ui/main/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/ui/main/index.d.ts",
+        "default": "./dist/lib/components/ui/main/index.js"
+      }
+    },
+    "./package.json": "./package.json",
+    "./placeholder": {
+      "solid": "./dist/lib/elements/placeholder/index.jsx",
+      "import": {
+        "types": "./dist/lib/elements/placeholder/index.d.ts",
+        "default": "./dist/lib/elements/placeholder/index.js"
+      }
+    },
+    "./prose/h1": {
+      "solid": "./dist/lib/components/prose/h1/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/prose/h1/index.d.ts",
+        "default": "./dist/lib/components/prose/h1/index.js"
+      }
+    },
+    "./prose/h2": {
+      "solid": "./dist/lib/components/prose/h2/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/prose/h2/index.d.ts",
+        "default": "./dist/lib/components/prose/h2/index.js"
+      }
+    },
+    "./prose/h3": {
+      "solid": "./dist/lib/components/prose/h3/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/prose/h3/index.d.ts",
+        "default": "./dist/lib/components/prose/h3/index.js"
+      }
+    },
+    "./prose/h4": {
+      "solid": "./dist/lib/components/prose/h4/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/prose/h4/index.d.ts",
+        "default": "./dist/lib/components/prose/h4/index.js"
+      }
+    },
+    "./prose/icon": {
+      "solid": "./dist/lib/components/prose/icon/index.jsx",
+      "import": {
+        "types": "./dist/lib/components/prose/icon/index.d.ts",
+        "default": "./dist/lib/components/prose/icon/index.js"
+      }
+    },
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./ui.css": "./dist/index.css",
+    "./unplugin": "./dist/unplugin.js",
+    "./use-app-config": "./dist/lib/composables/use-app-config.js",
+    "./use-color-mode": {
+      "solid": "./dist/lib/composables/use-color-mode.jsx",
+      "import": {
+        "types": "./dist/lib/composables/use-color-mode.d.ts",
+        "default": "./dist/lib/composables/use-color-mode.js"
+      }
+    },
+    "./use-controllable-state": "./dist/lib/composables/use-controllable-state.js",
+    "./use-environment": {
+      "solid": "./dist/lib/composables/use-environment.jsx",
+      "import": {
+        "types": "./dist/lib/composables/use-environment.d.ts",
+        "default": "./dist/lib/composables/use-environment.js"
+      }
+    },
+    "./use-icon": "./dist/lib/composables/use-icon.js",
+    "./use-locale": {
+      "solid": "./dist/lib/composables/use-locale.jsx",
+      "import": {
+        "types": "./dist/lib/composables/use-locale.d.ts",
+        "default": "./dist/lib/composables/use-locale.js"
+      }
+    },
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js",
+    "./vite": "./dist/vite.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.jsx",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .turbo coverage dist node_modules",
+    "dev": "tsdown --watch",
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook:build": "storybook build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@unpic/core": "^1.0.3",
+    "@veehance/core": "workspace:*",
+    "@zag-js/core": "^1.43.3",
+    "@zag-js/dom-query": "^1.43.3",
+    "@zag-js/focus-visible": "^1.43.3",
+    "@zag-js/hotkeys": "^1.43.3",
+    "@zag-js/i18n-utils": "^1.43.3",
+    "@zag-js/solid": "^1.43.3",
+    "@zag-js/utils": "^1.43.3",
+    "tailwind-variants": "^3.3.1",
+    "ufo": "^1.6.4",
+    "unplugin": "^3.3.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.129",
+    "@iconify/tailwind4": "^1.2.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "solid-js": "^1.9.15",
+    "unplugin-solid": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@iconify/utils": ">=3",
+    "@inertiajs/core": ">=3",
+    "@solidjs/router": ">=1",
+    "@tanstack/solid-router": ">=1",
+    "@unpic/solid": ">=1",
+    "defu": ">=6",
+    "inertia-adapter-solid": ">=1.0.0-beta.9",
+    "radashi": ">=12",
+    "solid-js": ">=1.6",
+    "vite": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@inertiajs/core": {
+      "optional": true
+    },
+    "@solidjs/router": {
+      "optional": true
+    },
+    "@tanstack/solid-router": {
+      "optional": true
+    },
+    "@unpic/solid": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "inertia-adapter-solid": {
+      "optional": true
+    },
+    "radashi": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
