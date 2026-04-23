@@ -1,0 +1,22 @@
+{
+  "framework": ["vue:nuxt", { "content": true, "locale": true, "prose": true }],
+  "tailwind": {
+    "baseColor": "zinc",
+    "css": "./app/styles.css",
+    "cssVariables": false
+  },
+  "theme": {
+    "defaultVariants": { "color": "primary", "size": "md" },
+    "colors": ["primary", "secondary", "success", "info", "warning", "error"]
+  },
+  "ui": {
+    "colors": {
+      "primary": "emerald",
+      "secondary": "cyan",
+      "success": "green",
+      "info": "blue",
+      "warning": "yellow",
+      "error": "red"
+    }
+  }
+}

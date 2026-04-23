@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@tsconfig/vite-react/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "module": "esnext",
+    "paths": { "#build/*": ["./node_modules/.veehance/*"] },
+    "resolveJsonModule": true,
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": []
+}

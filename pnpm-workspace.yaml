@@ -4,4 +4,10 @@ packages:
   - packages/*
 
 ignoredBuiltDependencies:
+  - '@parcel/watcher'
   - esbuild
+
+onlyBuiltDependencies:
+  - sharp
+  - svelte-preprocess
+  - vue-demi

@@ -1,6 +1,13 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite/biome/core", "ultracite/biome/vitest"],
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/next",
+    "ultracite/biome/react",
+    "ultracite/biome/svelte",
+    "ultracite/biome/vue",
+    "ultracite/biome/vitest"
+  ],
   "assist": {
     "actions": {
       "source": {
@@ -8,6 +15,10 @@
           "level": "on",
           "options": {
             "groups": [
+              ["tsdown", "vitest"],
+              ":BLANK_LINE:",
+              ["react", "svelte", "vue"],
+              ":BLANK_LINE:",
               ":NODE:",
               ":BLANK_LINE:",
               ["@veehance/**"],
@@ -30,7 +41,21 @@
     }
   },
   "files": {
-    "includes": ["!!__tmp__", "!!**/coverage", "!!**/dist", "!!**/node_modules"]
+    "includes": [
+      "!!__tmp__",
+      "!!**/.next",
+      "!!**/.nitro",
+      "!!**/.nuxt",
+      "!!**/.react-router",
+      "!!**/.router",
+      "!!**/.svelte-kit",
+      "!!**/.tanstack",
+      "!!**/coverage",
+      "!!**/dist",
+      "!!**/generated",
+      "!!**/node_modules",
+      "!!**/routeTree.gen.ts"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
@@ -38,15 +63,74 @@
   },
   "linter": {
     "rules": {
+      "nursery": {
+        "useSortedClasses": {
+          "level": "on",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["cc", "cn", "cv", "cx"]
+          }
+        }
+      },
       "performance": {
-        "noBarrelFile": "off"
+        "noBarrelFile": "off",
+        "noImgElement": "off"
       },
       "style": {
-        "useBlockStatements": "off"
+        "noHeadElement": "off",
+        "useBlockStatements": "off",
+        "useFilenamingConvention": "off"
       },
       "suspicious": {
         "noExplicitAny": "off"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "examples/svelte-kit/**/*.{ts,svelte}",
+        "examples/svelte-router/**/*.{ts,svelte}",
+        "packages/svelte/**/*.{ts,svelte}"
+      ],
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      },
+      "linter": {
+        "rules": {
+          "style": {
+            "noNamespace": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "docs/**/*.{ts,vue}",
+        "examples/vue/**/*.{ts,vue}",
+        "examples/vue-nuxt/**/*.{ts,vue}",
+        "examples/vue-router/**/*.{ts,vue}",
+        "packages/vue/**/*.{ts,vue}"
+      ],
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      },
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off",
+            "useHookAtTopLevel": "off"
+          }
+        }
+      }
+    }
+  ]
 }

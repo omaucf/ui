@@ -1,0 +1,7 @@
+@import "tailwindcss" theme(static);
+@import "@veehance/svelte";
+
+@theme static {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}

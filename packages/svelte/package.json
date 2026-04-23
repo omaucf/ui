@@ -1,0 +1,179 @@
+{
+  "name": "@veehance/svelte",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "@omaucf <omaucf@pm.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "imports": {
+    "#build/app.config": "./generated/app.config.ts",
+    "#build/theme/*": "./generated/theme/*.ts",
+    "#build/ui.css": "./generated/ui.css"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "style": "./dist/index.css",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./app": {
+      "types": "./dist/components/app/index.d.ts",
+      "svelte": "./dist/components/app/index.js",
+      "import": "./dist/components/app/index.js"
+    },
+    "./container": {
+      "types": "./dist/components/container/index.d.ts",
+      "svelte": "./dist/components/container/index.js",
+      "import": "./dist/components/container/index.js"
+    },
+    "./main": {
+      "types": "./dist/components/main/index.d.ts",
+      "svelte": "./dist/components/main/index.js",
+      "import": "./dist/components/main/index.js"
+    },
+    "./use-app-config": {
+      "types": "./dist/composables/use-app-config.d.ts",
+      "svelte": "./dist/composables/use-app-config.js",
+      "import": "./dist/composables/use-app-config.js"
+    },
+    "./use-color-mode": {
+      "types": "./dist/composables/use-color-mode.d.ts",
+      "svelte": "./dist/composables/use-color-mode.js",
+      "import": "./dist/composables/use-color-mode.js"
+    },
+    "./use-environment": {
+      "types": "./dist/composables/use-environment.d.ts",
+      "svelte": "./dist/composables/use-environment.js",
+      "import": "./dist/composables/use-environment.js"
+    },
+    "./use-head": {
+      "types": "./dist/composables/use-head.d.ts",
+      "svelte": "./dist/composables/use-head.js",
+      "import": "./dist/composables/use-head.js"
+    },
+    "./environment": {
+      "types": "./dist/providers/environment/index.d.ts",
+      "svelte": "./dist/providers/environment/index.js",
+      "import": "./dist/providers/environment/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "svelte": "./dist/utils/index.js",
+      "import": "./dist/utils/index.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "svelte": "./dist/utils/*.js",
+      "import": "./dist/utils/*.js"
+    },
+    "./kit": "./dist/kit.js",
+    "./template": "./dist/template.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.svelte",
+    "generated/ui.css",
+    "package.json"
+  ],
+  "scripts": {
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "dev": "svelte-package && tsdown --watch",
+    "build": "svelte-package && tsdown",
+    "test": "vitest run",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json",
+    "clean": "git clean -xdf .svelte-kit .turbo coverage dist generated node_modules"
+  },
+  "peerDependencies": {
+    "@iconify/svelte": ">=5",
+    "@iconify/utils": ">=3",
+    "@inertiajs/svelte": ">=3",
+    "@unhead/svelte": ">=3",
+    "@unpic/svelte": ">=1",
+    "bits-ui": ">=2.18",
+    "defu": ">=6",
+    "mode-watcher": ">=1",
+    "scule": ">=1",
+    "sv-router": ">=0.16",
+    "svelte": ">=5",
+    "tailwind-variants": ">=3",
+    "vite": ">=8",
+    "zod": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@iconify/svelte": {
+      "optional": true
+    },
+    "@iconify/utils": {
+      "optional": true
+    },
+    "@inertiajs/svelte": {
+      "optional": true
+    },
+    "@unhead/svelte": {
+      "optional": true
+    },
+    "@unpic/svelte": {
+      "optional": true
+    },
+    "bits-ui": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "mode-watcher": {
+      "optional": true
+    },
+    "scule": {
+      "optional": true
+    },
+    "sv-router": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "tailwind-variants": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.4",
+    "@veehance/core": "workspace:*",
+    "unplugin": "^3.0.0",
+    "unplugin-auto-import": "^21.0.0",
+    "vite-plugin-webfont-dl": "^3.12.0"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.5.7",
+    "glob": "^13.0.6"
+  }
+}

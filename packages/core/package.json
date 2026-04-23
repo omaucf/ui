@@ -1,0 +1,114 @@
+{
+  "name": "@veehance/core",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "@omaucf <omaucf@pm.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "imports": {
+    "#build/app.config": "./generated/app.config.ts",
+    "#build/ui/*": "./generated/ui/*.ts"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "style": "./dist/index.css",
+      "import": "./dist/index.js"
+    },
+    "./plugin/*": "./dist/plugin/*.js",
+    "./iconset": "./dist/iconset/index.js",
+    "./iconset/*": "./dist/iconset/*.js",
+    "./locale": "./dist/locale/index.js",
+    "./locale/*": "./dist/locale/*.js",
+    "./preset": "./dist/preset/index.js",
+    "./preset/*": "./dist/preset/*.js",
+    "./theme": "./dist/theme/index.js",
+    "./theme/*": "./dist/theme/*.js",
+    "./constants": "./dist/lib/constants/index.js",
+    "./constants/*": "./dist/lib/constants/*.js",
+    "./functions": "./dist/lib/functions/index.js",
+    "./functions/*": "./dist/lib/functions/*.js",
+    "./helpers": "./dist/lib/helpers/index.js",
+    "./helpers/*": "./dist/lib/helpers/*.js",
+    "./schemas": "./dist/lib/schemas/index.js",
+    "./schemas/*": "./dist/lib/schemas/*.js",
+    "./types": "./dist/lib/types/index.js",
+    "./types/*": "./dist/lib/types/*.js",
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js",
+    "./colors": "./dist/lib/colors.js",
+    "./defaults": "./dist/lib/defaults.js",
+    "./config": "./dist/config.js",
+    "./factory": "./dist/factory.js",
+    "./template": "./dist/template.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./package.json": "./package.json",
+    "./bundler": "./bundler.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "package.json",
+    "bundler.js",
+    "bundler.d.ts"
+  ],
+  "scripts": {
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo coverage dist generated node_modules"
+  },
+  "peerDependencies": {
+    "@iconify/utils": ">=3",
+    "defu": ">=6",
+    "scule": ">=1",
+    "tailwind-variants": ">=3",
+    "unplugin": ">=3",
+    "zod": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@iconify/utils": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "scule": {
+      "optional": true
+    },
+    "tailwind-variants": {
+      "optional": true
+    },
+    "unplugin": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.105"
+  }
+}

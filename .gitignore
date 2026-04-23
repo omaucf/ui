@@ -1,5 +1,15 @@
 # Outputs
+.next
+.nitro
+.nuxt
+.output
+.react-router
+.router
+.svelte-kit
+.tanstack
 dist
+generated
+next-env.d.ts
 
 # Environment
 .env

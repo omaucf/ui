@@ -1,0 +1,147 @@
+{
+  "name": "@veehance/react",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "@omaucf <omaucf@pm.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/omaucf/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaucf/ui.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/omaucf/ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "imports": {
+    "#build/app.config": "./generated/app.config.ts",
+    "#build/theme/*": "./generated/theme/*.ts",
+    "#build/ui.css": "./generated/ui.css"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "style": "./dist/index.css",
+      "import": "./dist/index.js"
+    },
+    "./app": "./dist/lib/components/app/index.js",
+    "./app/base": "./dist/base/components/app/index.js",
+    "./container": "./dist/lib/components/container/index.js",
+    "./main": "./dist/lib/components/main/index.js",
+    "./use-app-config": "./dist/lib/composables/use-app-config.js",
+    "./use-color-mode": "./dist/lib/composables/use-color-mode.js",
+    "./use-color-mode/base": "./dist/base/composables/use-color-mode.js",
+    "./use-environment": "./dist/lib/composables/use-environment.js",
+    "./use-head": "./dist/lib/composables/use-head.js",
+    "./environment": "./dist/lib/providers/environment/index.js",
+    "./utils": "./dist/lib/utils/index.js",
+    "./utils/*": "./dist/lib/utils/*.js",
+    "./next": "./dist/next.js",
+    "./template": "./dist/template.js",
+    "./unplugin": "./dist/unplugin.js",
+    "./vite": "./dist/vite.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*.css",
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "generated/ui.css",
+    "package.json"
+  ],
+  "scripts": {
+    "prepare": "[ ! -d dist ] && run-s build || true",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo coverage dist generated node_modules"
+  },
+  "peerDependencies": {
+    "@base-ui/react": ">=1.4",
+    "@iconify/react": ">=6",
+    "@iconify/utils": ">=3",
+    "@inertiajs/react": ">=3",
+    "@tanstack/react-router": ">=1",
+    "@unhead/react": ">=3",
+    "@unpic/react": ">=1",
+    "defu": ">=6",
+    "next": ">=16",
+    "next-themes": ">=0.4",
+    "react": ">=19",
+    "react-router": ">=7",
+    "scule": ">=1",
+    "tailwind-variants": ">=3",
+    "vite": ">=8",
+    "zod": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@base-ui/react": {
+      "optional": true
+    },
+    "@iconify/react": {
+      "optional": true
+    },
+    "@iconify/utils": {
+      "optional": true
+    },
+    "@inertiajs/react": {
+      "optional": true
+    },
+    "@tanstack/react-router": {
+      "optional": true
+    },
+    "@unhead/react": {
+      "optional": true
+    },
+    "@unpic/react": {
+      "optional": true
+    },
+    "defu": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "next-themes": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-router": {
+      "optional": true
+    },
+    "scule": {
+      "optional": true
+    },
+    "tailwind-variants": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/vite": "^4.2.4",
+    "@veehance/core": "workspace:*",
+    "unplugin": "^3.0.0",
+    "unplugin-auto-import": "^21.0.0",
+    "vite-plugin-webfont-dl": "^3.12.0"
+  },
+  "devDependencies": {
+    "react-frame-component": "^5.3.2"
+  }
+}

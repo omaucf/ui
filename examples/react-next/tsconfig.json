@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@tsconfig/next/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "module": "esnext",
+    "paths": { "#build/*": ["./generated/*"] },
+    "plugins": [{ "name": "next" }],
+    "resolveJsonModule": true,
+    "target": "es2017",
+    "types": ["node"]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": []
+}
